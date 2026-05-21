@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Pacifico&display=swap');
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap');
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Pacifico&display=swap');
+
+
+@import "tailwindcss";
+
+
+:root {
+  --primary-color: #10b981; /* this is equivalent to bg-emarald-500 */
+  --secondary-color: #16a34a; /* green-600 */
+}
+
+html{
+    scroll-behavior: auto;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.title-font{
+       font-family: "Bad Script", cursive;
+}
+
+/* Target both html and body to completely strip scrollbars globally */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, and Opera */
+}
