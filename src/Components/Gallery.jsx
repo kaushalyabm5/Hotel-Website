@@ -84,15 +84,14 @@ const Gallery = () => {
   return (
     <section 
       ref={containerRef}
+      id='gallery'
       className="w-full bg-neutral-50 text-neutral-900 py-20 md:py-28 px-6 md:px-12 lg:px-20 select-none overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         
         {/* Editorial Section Headings */}
         <div ref={headerRef} className="w-full text-center mb-16 md:mb-20 opacity-0">
-          <span className="text-xs uppercase tracking-[0.25em] font-medium text-[var(--primary-color)] block mb-3">
-            Our Gallery
-          </span>
+        
           <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
             Moments Captured
           </h3>

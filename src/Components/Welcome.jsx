@@ -58,7 +58,8 @@ const Welcome = () => {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-white text-neutral-900 pt-20 pb-2 px-6 md:px-12 lg:px-20 select-none overflow-hidden"
+      id='about-us'
+      className="w-full mt-scroll-24 bg-white text-neutral-900 pt-20 pb-2 px-6 md:px-12 lg:px-20 select-none overflow-hidden"
     >
       
       {/* Top Center Section Title */}

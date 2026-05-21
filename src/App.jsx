@@ -9,6 +9,9 @@ import Welcome from './Components/Welcome'
 import AboutUs2 from './Components/AboutUs2'
 import WhyUs from './Components/WhyUs'
 import Accommodation from './Components/Accommodation'
+import Contact from './Components/Contact'
+import Footer from './Components/Footer'
+import ScrollToTop from './Components/ScrollToTop'
 
 const App = () => {
 
@@ -31,6 +34,10 @@ const App = () => {
       <Accommodation />
       <Gallery />
       <Testimonials />
+      <Contact />
+      <Footer />
+
+      <ScrollToTop />
     </div>
   )
 }

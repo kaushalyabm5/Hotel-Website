@@ -31,7 +31,7 @@ const Accommodation = () => {
   ];
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto bg-white">
+    <section id="accommodation" className="scroll-mt-10 pt-16 pb-16 px-4 max-w-7xl mx-auto bg-white">
       {/* Top Center Main Header and Subheadline */}
       {/* Top Center Section Title */}
       <div className="w-full text-center mb-16 md:mb-20">
@@ -87,17 +87,12 @@ const Accommodation = () => {
               </div>
 
               {/* Interactive Action Array Button Element System */}
-              <div className="grid grid-cols-2 gap-3 mt-auto">
+              <div className="mt-auto">
+            
                 <a
-                  href={`/accommodation#${room.id}`}
-                  style={{ borderColor: "var(--primary-color)", color: "var(--primary-color)" }}
-                  className="flex items-center justify-center text-xs font-bold uppercase tracking-wider border py-3 transition-opacity duration-200 hover:opacity-80 text-center rounded-full"
-                >
-                  View Details
-                </a>
-                <a
-                  href="/book-now"
+                  href="https://www.booking.com/"
                   style={{ backgroundColor: "var(--primary-color)" }}
+                  target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center text-xs font-bold uppercase tracking-wider text-white py-3 transition-opacity duration-200 hover:opacity-90 text-center rounded-full"
                 >
                   Book Now

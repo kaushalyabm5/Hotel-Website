@@ -62,7 +62,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto bg-white font-sans">
+    <section className="pt-17 pb-20 px-4 max-w-7xl mx-auto bg-white font-sans">
      
 
       {/* Top Center Section Title */}

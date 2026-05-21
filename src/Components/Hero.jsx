@@ -86,6 +86,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef} 
+      id='home'
       className="relative w-full h-screen overflow-hidden bg-neutral-950 flex items-center justify-center text-white select-none"
     >
       {/* Background Image Layer with Luxury Dark Mask */}
@@ -115,7 +116,7 @@ const Hero = () => {
         {/* Core Brand Identity Statement */}
         <h1 
           ref={titleRef} 
-          className="title-font mt-5 text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.2em] uppercase text-white mb-5 opacity-0 leading-none"
+          className="mt-5 text-2xl md:text-[7rem] font-light tracking-wide text-neutral-100 uppercase mb-4 font-serif"
           
         >
           Nilwadula
