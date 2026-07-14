@@ -12,17 +12,18 @@ const Navbar = () => {
   
   const menuOverlayRef = useRef(null);
   const desktopNavRef = useRef(null);
+  // NEW: Keep track if the user just clicked a navbar item
+  const isClickScrolling = useRef(false);
 
-  // Normal Navbar links configuration
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About Us', href: '#about-us', id: 'about-us' },
+    { name: 'Services', href: '#services', id: 'services' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
     { name: 'Reviews', href: '#reviews', id: 'reviews' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
-  // Include accommodation section in scroll spy targets list
   const spyTargets = [...navLinks, { id: 'accommodation' }];
 
   useEffect(() => {
@@ -34,11 +35,7 @@ const Navbar = () => {
     );
 
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -47,13 +44,17 @@ const Navbar = () => {
 
   // Intersection Observer layout tracker
   useEffect(() => {
+    // FIX: Optimized rootMargin and threshold to prevent skipping short sections
     const observerOptions = {
       root: null,
-      rootMargin: '-30% 0px -40% 0px',
-      threshold: 0.1, 
+      rootMargin: '-20% 0px -50% 0px',
+      threshold: [0, 0.1, 0.2], 
     };
 
     const observerCallback = (entries) => {
+      // FIX: If we are currently animating a programmatic click-scroll, ignore observer updates
+      if (isClickScrolling.current) return;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
@@ -73,7 +74,6 @@ const Navbar = () => {
 
   // Fixed GSAP Mobile Target Selectors
   useEffect(() => {
-    // Target inner text components inside the overlay container safely
     const mobileLinks = menuOverlayRef.current?.querySelectorAll('.mobile-anim-link');
 
     if (isOpen) {
@@ -111,9 +111,18 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  // FIX: Handled programmatic scrolling logic locks
   const handleNavLinkClick = (id) => {
     setActiveSection(id);
     setIsOpen(false);
+    
+    // Set lock flag to true so scrolling past sections won't override our choice
+    isClickScrolling.current = true;
+
+    // Release the lock flag after the browser has finished smooth-scrolling (approx 800ms)
+    setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 800);
   };
 
   return (
@@ -144,7 +153,9 @@ const Navbar = () => {
           {/* Desktop Links Container */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navLinks.map((link, idx) => {
-              const isCurrent = activeSection === link.id;
+              // FIX: If activeSection is 'services' OR 'accommodation', highlight the Services item
+              const isCurrent = activeSection === link.id || (link.id === 'services' && activeSection === 'accommodation');
+              
               return (
                 <a
                   key={idx}
@@ -169,10 +180,10 @@ const Navbar = () => {
 
           <div className="hidden lg:block">
             <a href='#accommodation' onClick={() => handleNavLinkClick('accommodation')}>
-             <button className="bg-[var(--primary-color)] rounded-[1rem] cursor-pointer border border-[var(--primary-color)]/40 hover:border-[var(--primary-color)] hover:bg-[var(--primary-color)] text-white font-medium text-[10px] uppercase tracking-[0.25em] px-7 py-3.5 transition-all duration-500 flex items-center gap-2">
-  <Calendar color="#ffffff" className="w-3.5 h-3.5" strokeWidth={2} />
-  Accommodation
-</button>
+               <button className="bg-[var(--primary-color)] rounded-[1rem] cursor-pointer border border-[var(--primary-color)]/40 hover:border-[var(--primary-color)] hover:bg-[var(--primary-color)] text-white font-medium text-[10px] uppercase tracking-[0.25em] px-7 py-3.5 transition-all duration-500 flex items-center gap-2">
+                <Calendar color="#ffffff" className="w-3.5 h-3.5" strokeWidth={2} />
+                Accommodation
+              </button>
             </a>
           </div>
 
@@ -187,7 +198,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Full Screen Menu Overlay — Dynamic visibility handling using pointer events state rules */}
+      {/* Full Screen Menu Overlay */}
       <div 
         ref={menuOverlayRef}
         className={`fixed inset-0 z-50 bg-neutral-950 flex flex-col justify-between lg:hidden transition-all duration-100
@@ -219,7 +230,8 @@ const Navbar = () => {
 
         <nav className="flex flex-col items-center justify-center gap-8 px-6 text-center">
           {navLinks.map((link, idx) => {
-            const isCurrent = activeSection === link.id;
+            const isCurrent = activeSection === link.id || (link.id === 'services' && activeSection === 'accommodation');
+            
             return (
               <a
                 key={idx}

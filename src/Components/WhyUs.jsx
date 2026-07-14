@@ -2,116 +2,86 @@ import React from "react";
 import { Trees, BedDouble, HeartHandshake, MapPin } from "lucide-react";
 
 const WhyUs = () => {
-  const cards = [
+  const features = [
     {
-      type: "image",
-      imgUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-      alt: "Peaceful nature environment",
-    },
-    {
-      type: "text",
       title: "Peaceful Environment",
       description: "Surrounded by nature and relaxing landscapes.",
       icon: Trees,
-      bgColor: "bg-emerald-200",
-      textColor: "text-neutral-700",
-      iconColor: "text-emerald-600",
+      imgUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      alt: "Peaceful nature environment",
+      gridClass: "md:col-span-2 lg:col-span-2",
     },
     {
-      type: "image",
-      imgUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-      alt: "Comfortable hotel room accommodation",
-    },
-    {
-      type: "text",
       title: "Comfortable Accommodation",
       description: "Well-designed rooms with modern amenities.",
       icon: BedDouble,
-      bgColor: "bg-emerald-200", // Dark slate block from reference UI
-      textColor: "text-neutral-700",
-      iconColor: "text-emerald-600",
+      imgUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+      alt: "Comfortable hotel room accommodation",
+      gridClass: "md:col-span-1 lg:col-span-2",
     },
     {
-      type: "text",
       title: "Exceptional Hospitality",
       description: "Friendly and personalized guest experiences.",
       icon: HeartHandshake,
-      bgColor: "bg-neutral-400", // Muted slate blue/gray block from reference UI
-      textColor: "text-neutral-100",
-      iconColor: "text-emerald-600",
-    },
-    {
-      type: "image",
       imgUrl: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
       alt: "Personalized hospitality guest experience",
+      gridClass: "md:col-span-1 lg:col-span-2",
     },
     {
-      type: "text",
       title: "Prime Location",
       description: "Easy access to attractions and transport.",
       icon: MapPin,
-      bgColor: "bg-neutral-400",
-      textColor: "text-neutral-100",
-      iconColor: "text-emerald-600",
-    },
-    {
-      type: "image",
       imgUrl: "https://images.unsplash.com/photo-1455587734955-081b22074882?auto=format&fit=crop&w=800&q=80",
       alt: "Prime luxury hotel location view",
+      gridClass: "md:col-span-2 lg:col-span-2",
     },
   ];
 
   return (
     <section className="pt-17 pb-20 px-4 max-w-7xl mx-auto bg-white font-sans">
-     
-
-      {/* Top Center Section Title */}
+      {/* Top Center Section Title (Original Style Restored) */}
       <div className="w-full text-center mb-16 md:mb-20">
-          
-          <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
-           Why Stay With Us
-          </h3>
-          <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
-            Experience hospitality beyond accommodation.
-          </p>
+        <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
+          Why Stay With Us
+        </h3>
+        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+          Experience hospitality beyond accommodation.
+        </p>
+      </div>
 
-        </div>
-
-      {/* Grid Structure */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-        {cards.map((card, index) => {
-          if (card.type === "image") {
-            return (
-              <div
-                key={index}
-                className="relative h-[260px] md:h-[280px] lg:h-[300px] w-full rounded-3xl overflow-hidden group shadow-sm"
-              >
-                <img
-                  src={card.imgUrl}
-                  alt={card.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-              </div>
-            );
-          }
-
-          // Dynamically instantiate the icon component
-          const IconComponent = card.icon;
-
+      {/* Bento Grid Structure */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map((feature, index) => {
+          const IconComponent = feature.icon;
           return (
             <div
               key={index}
-              className={`h-[260px] md:h-[280px] lg:h-[300px] p-8 rounded-3xl flex flex-col justify-start shadow-sm ${card.bgColor}`}
+              className={`group relative h-[380px] rounded-2xl overflow-hidden shadow-sm bg-white border border-neutral-100 flex flex-col justify-end transition-all duration-300 hover:shadow-xl ${feature.gridClass}`}
             >
-              <div className="mb-5">
-                <IconComponent className={`w-8 h-8 stroke-[1.5] ${card.iconColor}`} />
+              {/* Image Layer Background */}
+              <div className="absolute inset-0 z-0 overflow-hidden">
+                <img
+                  src={feature.imgUrl}
+                  alt={feature.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                {/* Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-900/40 to-transparent" />
               </div>
-              <div>
-                <h3 className={`text-xl md:text-2xl font-semibold mb-3 leading-tight ${card.textColor}`}>
-                  {card.title}
+
+              {/* Text & Content Layer */}
+              <div className="relative z-10 p-6 md:p-8">
+                {/* Icon Circle */}
+                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-600 text-white shadow-md backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1">
+                  <IconComponent className="w-6 h-6 stroke-[1.75]" />
+                </div>
+
+                {/* Typography */}
+                <h3 className="text-xl md:text-2xl font-medium mb-2 text-white font-serif">
+                  {feature.title}
                 </h3>
-                <p className={`text-sm leading-relaxed opacity-85 ${card.textColor}`}>
-                  {card.description}
+                <p className="text-sm text-neutral-200 font-light leading-relaxed max-w-md opacity-90 group-hover:opacity-100 transition-opacity">
+                  {feature.description}
                 </p>
               </div>
             </div>

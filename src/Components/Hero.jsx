@@ -116,7 +116,7 @@ const Hero = () => {
         {/* Core Brand Identity Statement */}
         <h1 
           ref={titleRef} 
-          className="mt-5 text-2xl md:text-[7rem] font-light tracking-wide text-neutral-100 uppercase mb-4 font-serif"
+          className="mt-5 text-[3rem] md:text-[7rem] font-light tracking-wide text-neutral-100 uppercase mb-4 font-serif"
           
         >
           Nilwadula
