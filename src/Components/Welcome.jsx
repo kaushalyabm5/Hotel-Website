@@ -9,126 +9,140 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 const Welcome = () => {
   const sectionRef = useRef(null);
-  const headerRef = useRef(null);
   const leftColRef = useRef(null);
-  const rightColRef = useRef(null);
+  const cardsContainerRef = useRef(null);
 
   useEffect(() => {
-    // Shared premium deceleration curve
     CustomEase.create('luxuryEase', 'M0,0 C0.1,0.85 0.15,1 1,1');
 
-    // 1. Header Reveal (Fades and tracks open slightly)
-    gsap.fromTo(headerRef.current,
+    // 1. Text & Left Side Animation Set
+    gsap.fromTo('.reveal-item',
       { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 1.8,
+        duration: 1.5,
+        stagger: 0.1,
         ease: 'luxuryEase',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 85%',
+          start: 'top 75%',
           toggleActions: 'play none none none'
         }
       }
     );
 
-    // 2. Main Content Blocks Jumbo Reveal (Scale, Lift, and Fade Cascaded)
-    const contentTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: headerRef.current,
-        start: 'bottom 80%',
-        toggleActions: 'play none none none'
+    // 2. Interlocking Cards Deluxe Entrance
+    gsap.fromTo('.welcome-card-left',
+      { opacity: 0, y: 60, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.8,
+        ease: 'luxuryEase',
+        scrollTrigger: {
+          trigger: cardsContainerRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
       }
-    });
+    );
 
-    contentTimeline
-      .fromTo(leftColRef.current,
-        { opacity: 0, y: 40, scale: 0.97 },
-        { opacity: 1, y: 0, scale: 1, duration: 2.2, ease: 'luxuryEase' }
-      )
-      .fromTo(rightColRef.current,
-        { opacity: 0, y: 40, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 2.4, ease: 'luxuryEase' },
-        '-=1.8' // Smooth elegant overlap
-      );
-
+    gsap.fromTo('.welcome-card-right',
+      { opacity: 0, y: 100, scale: 0.96 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 2,
+        ease: 'luxuryEase',
+        scrollTrigger: {
+          trigger: cardsContainerRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
   }, []);
 
   return (
     <section 
       ref={sectionRef}
       id='about-us'
-      className="w-full mt-scroll-24 bg-white text-neutral-900 pt-20 pb-2 px-6 md:px-12 lg:px-20 select-none overflow-hidden"
+      className="w-full bg-[#fcfbfa] text-neutral-900 pt-24 pb-32 px-4 sm:px-8 md:px-16 lg:px-24 select-none overflow-hidden"
     >
-      
-      {/* Top Center Section Title */}
-      <div ref={headerRef} className="w-full text-center mb-16 md:mb-20 opacity-0">
-          
-          <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
-           Welcome
-          </h3>
-          <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
-            Discover a destination designed for comfort, relaxation, and authentic experiences
-          </p>
-
-        </div>
-
-      {/* Main Content Layout Block */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-8 items-start justify-between">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-12">
         
-        {/* Left Column: Narrative & Action */}
-        <div ref={leftColRef} className="w-full lg:w-[35%] flex flex-col items-start pt-2 opacity-0 origin-top">
-          <span className="px-4 py-1.5 bg-[var(--primary-color)]/10 rounded-[1rem] text-[11px] font-medium uppercase tracking-wider text-neutral-600 mb-6">
-            Explore
-          </span>
+        {/* Left Layout Pane: Narrative Blocks */}
+        <div ref={leftColRef} className="w-full lg:w-[40%] flex flex-col items-start">
           
-          <h3 className="text-3xl md:text-[1.8rem] font-normal leading-[1.25] tracking-tight text-neutral-900 mb-5 max-w-md">
-            Discover cozy stays and <span className="font-semibold">scenic spots</span> around our small tourism hotel.
-          </h3>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-900/5 rounded-full mb-6 reveal-item opacity-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-800 animate-pulse" />
+            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-600">
+              The Living Space
+            </span>
+          </div>
+          
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-neutral-950 uppercase leading-[1.15] mb-6 font-serif reveal-item opacity-0">
+            A quiet <br />
+            <span className="font-sans font-black tracking-normal text-neutral-900">REVOLUTION</span> <br />
+            in luxury.
+          </h2>
 
-          <p className='text-[1rem] font-light text-neutral-400 mb-5 ading-relaxed tracking-wide max-w-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum officiis nisi dolorum. Veniam tenetur voluptates blanditiis ipsa praesentium nemo fugit nulla eaque.</p>
+          <p className="text-neutral-500 text-sm font-light tracking-wide leading-relaxed max-w-md mb-8 reveal-item opacity-0">
+            Nilwadula balances pure architectural lines with the fluid, organic contours of the island terrain. Built entirely out of locally sourced timber and smooth cast stone, these spaces are designed to soften your day-to-day rhythms.
+          </p>
           
-          <div className="flex items-center gap-3">
-            <button className="px-6 cursor-pointer rounded-[1rem] py-3.5 bg-[var(--primary-color)] text-white text-xs uppercase tracking-widest font-medium transition-colors duration-300 hover:bg-emerald-600">
-              View Gallery
+          <div className="reveal-item opacity-0 w-full sm:w-auto">
+            <button className="w-full sm:w-auto cursor-pointer px-7 py-3.5 text-[10px] uppercase tracking-[0.3em] font-bold bg-neutral-950 text-white rounded-xl transition-all duration-300 hover:bg-neutral-800 shadow-xl shadow-neutral-950/10 hover:shadow-neutral-950/20">
+              View Spaces
             </button>
-            
           </div>
         </div>
 
-        {/* Right Side: Media Layout */}
-        <div ref={rightColRef} className="w-full lg:w-[60%] flex flex-col md:flex-row gap-6 items-stretch opacity-0 origin-top">
+        {/* Right Layout Pane: Dynamic Rounded Interlocking Grid */}
+        <div 
+          ref={cardsContainerRef} 
+          className="w-full lg:w-[55%] grid grid-cols-12 gap-4 sm:gap-6 relative items-center py-6"
+        >
           
-          {/* Card 1: Portrait/Square Dimension */}
-          <div className="relative rounded-[1rem] w-full md:w-1/2 aspect-[4/5] md:aspect-square lg:aspect-[4/5] bg-neutral-100 overflow-hidden flex flex-col justify-end p-8">
-            <img 
-              src={firstImage} 
-              alt="Moments from our trips" 
-              className="absolute rounded-[1rem] inset-0 w-full h-full object-cover"
-            />
-            {/* Subtle Gradient protection for text visibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-0" />
+          {/* Main Dominant Left Rounded Panel */}
+          <div className="welcome-card-left col-span-12 sm:col-span-7 group relative overflow-hidden rounded-3xl bg-neutral-100 aspect-[4/5] shadow-2xl shadow-neutral-900/5 opacity-0 transform-gpu">
+            <div className="absolute inset-0 overflow-hidden rounded-3xl">
+              <img 
+                src={firstImage} 
+                alt="Architectural Reserve Interior" 
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out scale-105 group-hover:scale-100"
+              />
+            </div>
             
+            {/* Visual protection mask overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
             
+            {/* Context Card Copy Content */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col items-start text-white">
+              <span className="text-[9px] tracking-[0.3em] font-bold text-white/60 uppercase mb-2">01 // PRIVATE RESIDENCE</span>
+              <h4 className="text-lg sm:text-xl font-serif font-light tracking-wide">The Sanctuary Pavilion</h4>
+            </div>
           </div>
 
-          {/* Card 2: Landscape / Editorial Context */}
-          <div className="w-full rounded-[1rem] md:w-1/2 flex flex-col justify-between gap-6">
-            <div className="relative w-full aspect-[16/10] bg-neutral-100 overflow-hidden p-6">
+          {/* Elevated Staggered Secondary Right Card */}
+          <div className="welcome-card-right col-span-12 sm:col-span-5 group relative overflow-hidden rounded-2xl bg-neutral-100 aspect-square sm:aspect-[3/4] shadow-2xl shadow-neutral-900/10 sm:-translate-y-12 opacity-0 transform-gpu z-10">
+            <div className="absolute inset-0 overflow-hidden rounded-2xl">
               <img 
                 src={secondImage} 
-                alt="Nature path routes" 
-                className="absolute rounded-[1rem] inset-0 w-full h-full object-cover"
+                alt="Coastal Textures View" 
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out scale-105 group-hover:scale-100"
               />
-              
-              
             </div>
-
-            {/* Explanatory Caption below image */}
-            <p className="text-neutral-500 text-sm font-light leading-relaxed tracking-wide max-w-sm pt-2">
-              Every stay reveals new experiences — from peaceful gardens to scenic views waiting to be enjoyed.
-            </p>
+            
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start text-white">
+              <span className="text-[9px] tracking-[0.3em] font-bold text-white/60 uppercase mb-1">02 // ESCAPE OUTLOOK</span>
+              <h4 className="text-base font-serif font-light tracking-wide">Shore Access Routes</h4>
+            </div>
           </div>
 
         </div>

@@ -38,55 +38,69 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="pt-17 pb-20 px-4 max-w-7xl mx-auto bg-white font-sans">
-      {/* Top Center Section Title (Original Style Restored) */}
-      <div className="w-full text-center mb-16 md:mb-20">
-        <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
-          Why Stay With Us
-        </h3>
-        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
-          Experience hospitality beyond accommodation.
-        </p>
-      </div>
+    <section id="why-us" className="w-full bg-[#FAF9F5] text-neutral-900 pt-24 pb-32 px-4 sm:px-8 md:px-16 lg:px-24 select-none overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Modern Centered Header - Perfectly matching your Amenities section style */}
+        <div className="w-full flex flex-col items-center text-center mb-16 md:mb-24">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-neutral-400 mb-4">
+            03 // THE DWELLING STANDARD
+          </span>
+          <h3 
+            className="text-3xl sm:text-4xl md:text-5xl font-extralight tracking-tight text-neutral-950 uppercase font-serif mb-6"
+            style={{ fontFamily: "'Cinzel', 'Didot', serif" }}
+          >
+            Why Stay <span className="italic font-normal text-neutral-600">With Us</span>
+          </h3>
+          <p className="text-neutral-500 text-xs sm:text-sm font-light max-w-xl leading-relaxed tracking-wide px-4">
+            Experience hospitality beyond accommodation.
+          </p>
+        </div>
 
-      {/* Bento Grid Structure */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((feature, index) => {
-          const IconComponent = feature.icon;
-          return (
-            <div
-              key={index}
-              className={`group relative h-[380px] rounded-2xl overflow-hidden shadow-sm bg-white border border-neutral-100 flex flex-col justify-end transition-all duration-300 hover:shadow-xl ${feature.gridClass}`}
-            >
-              {/* Image Layer Background */}
-              <div className="absolute inset-0 z-0 overflow-hidden">
-                <img
-                  src={feature.imgUrl}
-                  alt={feature.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-900/40 to-transparent" />
-              </div>
-
-              {/* Text & Content Layer */}
-              <div className="relative z-10 p-6 md:p-8">
-                {/* Icon Circle */}
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-600 text-white shadow-md backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1">
-                  <IconComponent className="w-6 h-6 stroke-[1.75]" />
+        {/* Premium Bento Grid Structure */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div
+                key={index}
+                className={`group relative h-[400px] rounded-2xl overflow-hidden bg-neutral-950 flex flex-col justify-between p-6 sm:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-neutral-950/10 ${feature.gridClass}`}
+              >
+                {/* Immersive Image Layer Background */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img
+                    src={feature.imgUrl}
+                    alt={feature.alt}
+                    className="w-full h-full object-cover opacity-40 transition-all duration-700 ease-out scale-100 group-hover:scale-105 group-hover:opacity-30"
+                  />
+                  {/* Luxury Ambient Deep Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/60" />
                 </div>
 
-                {/* Typography */}
-                <h3 className="text-xl md:text-2xl font-medium mb-2 text-white font-serif">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-neutral-200 font-light leading-relaxed max-w-md opacity-90 group-hover:opacity-100 transition-opacity">
-                  {feature.description}
-                </p>
+                {/* Top Interactive Row: Clean Icon Container */}
+                <div className="relative z-10 w-full flex justify-between items-start">
+                  <div className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:text-neutral-950">
+                    <IconComponent className="w-4 h-4 text-white transition-colors duration-500 group-hover:text-neutral-950 stroke-[1.5]" />
+                  </div>
+                  <span className="text-[10px] font-mono tracking-widest text-white/30 group-hover:text-white/60 transition-colors duration-300">
+                    [ 0{index + 1} ]
+                  </span>
+                </div>
+
+                {/* Bottom Informational Block */}
+                <div className="relative z-10 w-full flex flex-col items-start mt-auto">
+                  <h4 className="text-lg sm:text-xl font-serif tracking-wide text-white mb-2 uppercase">
+                    {feature.title}
+                  </h4>
+                  <p className="text-white/70 text-xs sm:text-[13px] font-light leading-relaxed tracking-wide max-w-sm transition-colors duration-300 group-hover:text-white">
+                    {feature.description}
+                  </p>
+                </div>
+
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
