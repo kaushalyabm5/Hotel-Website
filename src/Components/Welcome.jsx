@@ -70,16 +70,16 @@ const Welcome = () => {
     <section 
       ref={sectionRef}
       id='about-us'
-      className="w-full bg-[#fcfbfa] text-neutral-900 pt-24 pb-32 px-4 sm:px-8 md:px-16 lg:px-24 select-none overflow-hidden"
+      className="w-full bg-[white] text-neutral-900 pt-24 pb-32 px-4 sm:px-8 md:px-16 lg:px-24 select-none overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-12">
         
         {/* Left Layout Pane: Narrative Blocks */}
         <div ref={leftColRef} className="w-full lg:w-[45%] flex flex-col items-start">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-900/5 rounded-full mb-6 reveal-item opacity-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-neutral-800 animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-neutral-600">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-500/80 rounded-full mb-6 reveal-item opacity-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-white">
               The Living Space
             </span>
           </div>
@@ -90,7 +90,7 @@ const Welcome = () => {
             <span className="text-lg sm:text-xl font-sans tracking-[0.2em] text-neutral-500 block mt-2">Udawalawe</span>
           </h2>
 
-          <div className="text-neutral-500 text-sm font-light tracking-wide leading-relaxed max-w-md reveal-item opacity-0 flex flex-col gap-4">
+          <div className="text-neutral-500 text-sm font-normal tracking-wide leading-relaxed max-w-md reveal-item opacity-0 flex flex-col gap-4">
             <p>
               Nestled beside a peaceful river in the heart of Udawalawe, Nilwadula Hotel is where nature and comfort come together. Whether you're here for a wildlife safari, a relaxing holiday, or simply to reconnect with nature, we invite you to enjoy genuine Sri Lankan hospitality in a tranquil riverside setting.
             </p>
@@ -119,11 +119,7 @@ const Welcome = () => {
             {/* Visual protection mask overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
             
-            {/* Context Card Copy Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col items-start text-white">
-              <span className="text-[9px] tracking-[0.3em] font-bold text-white/60 uppercase mb-2">01 // PRIVATE RESIDENCE</span>
-              <h4 className="text-lg sm:text-xl font-serif font-light tracking-wide">The Sanctuary Pavilion</h4>
-            </div>
+           
           </div>
 
           {/* Elevated Staggered Secondary Right Card */}
@@ -138,10 +134,7 @@ const Welcome = () => {
             
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
             
-            <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start text-white">
-              <span className="text-[9px] tracking-[0.3em] font-bold text-white/60 uppercase mb-1">02 // ESCAPE OUTLOOK</span>
-              <h4 className="text-base font-serif font-light tracking-wide">Shore Access Routes</h4>
-            </div>
+            
           </div>
 
         </div>

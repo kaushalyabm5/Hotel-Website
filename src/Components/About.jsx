@@ -71,10 +71,12 @@ const About = () => {
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-8 md:px-16 lg:px-24 py-24 sm:py-32 flex items-center">
         <div ref={contentRef} className="max-w-2xl flex flex-col items-start">
           
-          {/* Section Subtitle */}
-          <div className="about-reveal-item opacity-0 inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md border border-white/10 rounded-full mb-8">
+        
+
+
+           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-500/80 rounded-full mb-6 reveal-item opacity-0">
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/90">
+            <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-white">
               About Us
             </span>
           </div>

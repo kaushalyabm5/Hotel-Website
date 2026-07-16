@@ -18,11 +18,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About Us', href: '#about-us', id: 'about-us' },
+    { name: 'About Us', href: '#about', id: 'about' },
+    { name: 'Why Chose Us', href: '#why-choose-us', id: 'why-choose-us' },
     { name: 'Services', href: '#services', id: 'services' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
-    { name: 'Reviews', href: '#reviews', id: 'reviews' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    
   ];
 
   const spyTargets = [...navLinks, { id: 'accommodation' }];
@@ -122,7 +122,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Links Container */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-12">
             {navLinks.map((link, idx) => {
               const isCurrent = activeSection === link.id || (link.id === 'services' && activeSection === 'accommodation');
               return (
@@ -131,7 +131,7 @@ const Navbar = () => {
                   href={link.href} 
                   onClick={() => handleNavLinkClick(link.id)} 
                   className={`text-[10px] uppercase tracking-[0.25em] font-medium transition-all duration-300 py-2 block
-                    ${isCurrent ? 'text-white' : 'text-neutral-400 hover:text-white'}`}
+                    ${isCurrent ? 'text-green-500' : 'text-neutral-400 hover:text-white'}`}
                 >
                   {link.name}
                 </a>
@@ -142,8 +142,8 @@ const Navbar = () => {
           {/* Action Button */}
           <div className="hidden lg:block">
             <a href='#accommodation' onClick={() => handleNavLinkClick('accommodation')}>
-              <button className={`relative group overflow-hidden bg-white text-neutral-950 font-semibold text-[9px] uppercase tracking-[0.2em] rounded-full transition-all duration-500 hover:text-white border border-white hover:border-white/25 ${scrolled ? 'px-5 py-2' : 'px-6 py-3'}`}>
-                <span className="absolute inset-0 bg-neutral-900 transition-transform duration-500 translate-y-full group-hover:translate-y-0" />
+              <button className={`cursor-pointer relative group overflow-hidden bg-green-500 text-neutral-950 font-semibold text-[9px] uppercase tracking-[0.2em] rounded-full transition-all duration-500 hover:text-white ${scrolled ? 'px-5 py-2' : 'px-6 py-3'}`}>
+                
                 <span className="relative flex items-center gap-2">
                   <Calendar className="w-3 h-3 transition-transform duration-300" strokeWidth={2.5} />
                   Accommodation

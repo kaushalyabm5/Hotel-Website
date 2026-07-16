@@ -76,7 +76,7 @@ const TestimonialCard = ({ testimonial }) => {
     <div className="w-[360px] md:w-[400px] shrink-0 bg-white border border-neutral-300 rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col justify-between mx-3 select-none">
       <div>
         {/* Rating Stars */}
-        <div className="flex gap-1 mb-4 text-amber-500">
+        <div className="flex gap-1 mb-4 text-green-500">
           {[...Array(5)].map((_, i) => (
             <svg
               key={i}
@@ -103,7 +103,7 @@ const TestimonialCard = ({ testimonial }) => {
         />
         <div>
           <h4 className="text-gray-900 font-semibold text-sm">{testimonial.name}</h4>
-          <p className="text-gray-400 text-xs">{testimonial.role}</p>
+          <p className="text-neutral-400 font-normal text-xs">{testimonial.role}</p>
         </div>
       </div>
     </div>
@@ -122,7 +122,7 @@ export default function Testimonials() {
         <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
           Guest Testimonials
         </h3>
-        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+        <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
                     Discover why travelers from around the globe choose our sanctuary for their unforgettable getaways and luxurious escapes.
 
         </p>

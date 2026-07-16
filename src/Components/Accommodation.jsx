@@ -1,106 +1,159 @@
-import React from "react";
-import { Users } from "lucide-react";
+import React from 'react';
+// Import required icons from lucide-react
+import { 
+  Wind, BedDouble, Bath, Wifi, Tv, Coffee, 
+  Sparkles, Sparkle, Palmtree, ArrowRight 
+} from 'lucide-react';
+
+// Import images from src/assets/hero-img
+import img1 from '../assets/hero-img/1.png';
+import img2 from '../assets/hero-img/2.png';
+import img3 from '../assets/hero-img/3.png';
 
 const Accommodation = () => {
-  // Dynamic room configurations array mapping directly to your fields
-  const accommodationsData = [
+  const rooms = [
     {
-      id: "deluxe-suite",
-      room_image_source: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
-      room_name_string: "Deluxe Ocean Suite",
-      room_short_description: "Immerse yourself in complete tranquility with expansive floor-to-ceiling vistas of the horizon.",
-      guest_capacity_count: 2,
-      price_parameter: 350,
+      id: 1,
+      image: img1,
+      type: "Deluxe Double Room",
+      view: "River View",
+      bedding: "1 King size double bed",
+      description: "Perfect for couples seeking a serene escape with soothing views of the flowing river."
     },
     {
-      id: "executive-villa",
-      room_image_source: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
-      room_name_string: "Executive Sanctuary Villa",
-      room_short_description: "A private, architectural haven offering unparalleled seclusion, standalone pool, and bespoke luxury services.",
-      guest_capacity_count: 4,
-      price_parameter: 620,
+      id: 2,
+      image: img2,
+      type: "Deluxe Triple Room",
+      view: "Pool View",
+      bedding: "1 Single bed & 1 Double bed",
+      description: "Spacious and comfortable, offering direct visual connection to our sparkling pool."
     },
     {
-      id: "signature-room",
-      room_image_source: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-      room_name_string: "Signature Heritage Room",
-      room_short_description: "A refined blend of mid-century minimalist aesthetics and state-of-the-art modern home automation systems.",
-      guest_capacity_count: 2,
-      price_parameter: 240,
-    },
+      id: 3,
+      image: img3,
+      type: "Deluxe Family Room",
+      view: "Pool View",
+      bedding: "2 Double beds",
+      description: "Designed for families to bond and unwind together in absolute comfort."
+    }
+  ];
+
+  // Features mapped to beautiful modern icons
+  const features = [
+    { text: "Air Conditioning", icon: Wind },
+    { text: "Comfortable Beds", icon: BedDouble },
+    { text: "Private Hot Water Bath", icon: Bath },
+    { text: "Free High-Speed Wi-Fi", icon: Wifi },
+    { text: "Smart TV", icon: Tv },
+    { text: "Tea & Coffee Facilities", icon: Coffee },
+    { text: "Complimentary Toiletries", icon: Sparkles },
+    { text: "Daily Housekeeping", icon: Sparkle },
+    { text: "Garden & Nature Views", icon: Palmtree }
   ];
 
   return (
-    <section id="accommodation" className="scroll-mt-10 pt-16 pb-16 px-4 max-w-7xl mx-auto bg-white">
-      {/* Top Center Main Header and Subheadline */}
-      {/* Top Center Section Title */}
-      <div className="w-full text-center mb-16 md:mb-20">
-          
+    <section id='accommodation' className="bg-white text-stone-900 py-24 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* Top Center Section Title */}
+        <div className="w-full text-center mb-20">
           <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
-          Our Accommodation
+            Our Accommodation
           </h3>
-          <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
-            Find the perfect stay designed for comfort and relaxation.
+          <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
+            Designed for rest and relaxation, our rooms provide a peaceful retreat after a day exploring Udawalawe. Wake up to fresh air, scenic garden views, and the gentle sounds of the nearby river.
           </p>
-
         </div>
 
-      {/* Responsive Grid Matrix */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {accommodationsData.map((room) => (
-          <div 
-            key={room.id} 
-            className="flex flex-col bg-white border border-gray-100 rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-md"
-          >
-            {/* Room Image Container */}
-            <div className="relative h-[240px] w-full overflow-hidden bg-gray-100 group">
-              <img
-                src={room.room_image_source}
-                alt={room.room_name_string}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div 
-                className="absolute top-4 right-4 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gray-900 shadow-sm rounded-full"
-              >
-                ${room.price_parameter} <span className="text-[10px] text-gray-400 font-normal">/ Night</span>
+        {/* Room Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {rooms.map((room) => (
+            <div 
+              key={room.id} 
+              className="group bg-stone-50 overflow-hidden rounded-2xl border border-stone-100/80 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2"
+              style={{
+                boxShadow: "0 20px 40px -15px rgba(28, 25, 23, 0.4), 0 0 0 1px rgba(28, 25, 23, 0.02)"
+              }}
+            >
+              {/* Image Container with rounded top corners embedded in the parent overflow */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
+                <img 
+                  src={room.image} 
+                  alt={room.type} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur-sm text-white text-xs uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full shadow-sm">
+                  {room.view}
+                </div>
               </div>
-            </div>
 
-            {/* Room Content Details */}
-            <div className="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                {/* Title and Capacity row */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 tracking-tight leading-snug">
-                    {room.room_name_string}
+              {/* Card Details */}
+              <div className="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-medium uppercase tracking-tight text-stone-900 mb-1">
+                    {room.type}
                   </h3>
-                  <div className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 px-2.5 py-1 shrink-0 rounded-full">
-                    <Users className="w-3.5 h-3.5 text-gray-400" />
-                    <span>{room.guest_capacity_count} Guests</span>
+                  <p className="text-xs tracking-wide text-green-500 font-semibold mb-4">
+                    {room.bedding}
+                  </p>
+                  <p className="text-stone-600 text-sm leading-relaxed mb-6">
+                    {room.description}
+                  </p>
+                </div>
+                
+                <div className="pt-4 border-t border-stone-100 flex justify-between items-center">
+                  <span className="text-sm font-semibold text-stone-900 cursor-pointer">
+                    Book This Room
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center transition-transform group-hover:translate-x-1 duration-300">
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-
-                {/* Short Capped Description */}
-                <p className="text-sm text-gray-500 leading-relaxed mb-6">
-                  {room.room_short_description}
-                </p>
-              </div>
-
-              {/* Interactive Action Array Button Element System */}
-              <div className="mt-auto">
-            
-                <a
-                  href="https://www.booking.com/"
-                  style={{ backgroundColor: "var(--primary-color)" }}
-                  target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center text-xs font-bold uppercase tracking-wider text-white py-3 transition-opacity duration-200 hover:opacity-90 text-center rounded-full"
-                >
-                  Book Now
-                </a>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Re-designed Bottom Features Section */}
+        <div className="bg-[white] shadow-2xl rounded-3xl p-8 md:p-12 border border-stone-100">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-4">
+              <div className="inline-flex items-center space-x-2 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                <span>Included with stay</span>
+              </div>
+              <h3 className="text-3xl font-light tracking-tight text-neutral-900">
+                Premium <br />
+                <span className="font-semibold text-green-500">In-Room Amenities</span>
+              </h3>
+              <p className="text-stone-600 text-sm mt-4 leading-relaxed">
+                Thoughtfully curated essentials to ensure your wilderness stay demands zero compromises on comfort.
+              </p>
+            </div>
+            
+            {/* Attractive Grid of Cards with Lucide Icons */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {features.map((feature, idx) => {
+                const IconComponent = feature.icon;
+                return (
+                  <div 
+                    key={idx} 
+                    className="flex items-center space-x-4 p-4 bg-white rounded-xl border border-stone-200/60 shadow-sm transition-all duration-300 hover:border-emerald-200 hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-green-50 text-green-500 flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-5 h-5" strokeWidth={1.8} />
+                    </div>
+                    <span className="text-stone-800 text-sm font-medium tracking-wide">
+                      {feature.text}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
-        ))}
+        </div>
+
       </div>
     </section>
   );

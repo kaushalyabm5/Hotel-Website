@@ -15,6 +15,8 @@ import ScrollToTop from './Components/ScrollToTop'
 import Services from './Components/Services'
 import About from './Components/About'
 import WhyStayWithUs from './Components/WhyStayWithUs'
+import Facilities from './Components/Facilities'
+import CTA from './Components/CTA'
 
 const App = () => {
 
@@ -34,11 +36,11 @@ const App = () => {
       <Welcome />
       <About />
       <WhyStayWithUs />
-      <Services />
       <Accommodation />
+      <Facilities />
       <Gallery />
       <Testimonials />
-      <Contact />
+      <CTA />
       <Footer />
 
       <ScrollToTop />

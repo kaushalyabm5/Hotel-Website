@@ -105,6 +105,7 @@ const WhyStayWithUs = () => {
 
   return (
     <section 
+      id='why-choose-us'
       ref={sectionRef}
       className="w-full bg-[#fbfbfa] text-neutral-900 py-32 px-6 sm:px-12 md:px-20 lg:px-32 select-none overflow-hidden"
     >
@@ -120,7 +121,7 @@ const WhyStayWithUs = () => {
         <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
           Why Stay With Us
         </h3>
-        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+        <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
                    We believe true luxury lies in simplicity. At Nilwadula, we remove the noise of the modern world so you can immerse yourself fully in Sri Lanka's beautiful natural habitats.
 
         </p>
@@ -139,17 +140,17 @@ const WhyStayWithUs = () => {
                 {/* Using md:order-last / md:order-first to seamlessly control alternation on desktop while keeping natural document flow for mobile */}
                 <div className={`col-span-1 md:col-span-6 flex flex-col justify-center ${isEven ? 'md:order-last md:pl-8' : 'md:pr-8'}`}>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-xs font-mono font-medium text-neutral-400 tracking-wider">
+                    <span className="text-xs font-mono font-medium text-green-500 tracking-wider">
                       {feat.number}
                     </span>
                     <span className="w-1.5 h-px bg-neutral-300" />
-                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-neutral-400">
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-green-500">
                       {feat.tag}
                     </span>
                   </div>
                   
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-neutral-100 rounded-xl text-neutral-800">
+                    <div className="p-2 bg-green-400 rounded-xl text-green-500">
                       {feat.icon}
                     </div>
                     <h3 className="text-xl sm:text-2xl font-serif font-light text-neutral-950">
@@ -157,7 +158,7 @@ const WhyStayWithUs = () => {
                     </h3>
                   </div>
 
-                  <p className="text-neutral-500 text-xs sm:text-sm font-light leading-relaxed tracking-wide">
+                  <p className="text-neutral-500 text-xs sm:text-sm font-normal leading-relaxed tracking-wide">
                     {feat.desc}
                   </p>
                 </div>
@@ -181,10 +182,10 @@ const WhyStayWithUs = () => {
         <div className="border-t border-neutral-200/80 pt-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div className="col-span-1 md:col-span-4">
-              <h4 className="text-xs uppercase tracking-[0.25em] font-bold text-neutral-400 mb-2">
+              <h4 className="text-[1rem] uppercase tracking-[0.25em] font-bold text-neutral-700 mb-2">
                 Essential Comforts
               </h4>
-              <p className="text-neutral-500 text-xs font-light leading-relaxed">
+              <p className="text-neutral-500 text-xs font-normal leading-relaxed">
                 Modern conveniences naturally woven into a quiet wild setting.
               </p>
             </div>
@@ -192,10 +193,10 @@ const WhyStayWithUs = () => {
             <div className="col-span-1 md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
               {quickAmenities.map((amenity, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-neutral-600">
-                  <div className="text-neutral-400">
+                  <div className="text-green-500">
                     {amenity.icon}
                   </div>
-                  <span className="text-xs font-light tracking-wide">
+                  <span className="text-[.9rem] font-normal tracking-wide">
                     {amenity.text}
                   </span>
                 </div>

@@ -55,14 +55,14 @@ export default function Gallery() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-25 pb-15 text-black select-none">
+    <section id='gallery' className="relative w-full overflow-hidden bg-white pt-25 pb-15 text-black select-none">
       
       {/* Top Center Section Title */}
       <div className="w-full text-center mb-1">
         <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
           Visual Landscape
         </h3>
-        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+        <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
           A clean architectural presentation showing structural framing views in a continuous sequential rhythm.
         </p>
       </div>
@@ -138,14 +138,14 @@ export default function Gallery() {
         <div className="absolute inset-x-0 top-1/2 z-40 mx-auto flex max-w-6xl -translate-y-1/2 justify-between px-4 sm:px-6 pointer-events-none">
           <button
             onClick={handlePrev}
-            className="group flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center border border-neutral-300 bg-white/90 text-black shadow-md cursor-pointer transition-all hover:bg-black hover:text-white pointer-events-auto active:scale-95 rounded-full"
+            className="group flex cursor-pointer h-10 w-10 sm:h-12 sm:w-12 items-center justify-center bg-green-500 text-white shadow-md transition-all hover:bg-green-500 hover:text-white pointer-events-auto active:scale-95 rounded-full"
             aria-label="Slide Left to Right"
           >
             <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
           <button
             onClick={handleNext}
-            className="group flex cursor-pointer h-10 w-10 sm:h-12 sm:w-12 items-center justify-center border border-neutral-300 bg-white/90 text-black shadow-md transition-all hover:bg-black hover:text-white pointer-events-auto active:scale-95 rounded-full"
+            className="group flex cursor-pointer h-10 w-10 sm:h-12 sm:w-12 items-center justify-center bg-green-500 text-white shadow-md transition-all hover:bg-green-500 hover:text-white pointer-events-auto active:scale-95 rounded-full"
             aria-label="Slide Right to Left"
           >
             <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -159,7 +159,7 @@ export default function Gallery() {
           <span
             key={idx}
             className={`h-1 transition-all duration-300 rounded-full ${
-              idx === currentIndex ? 'w-6 sm:w-8 bg-black' : 'w-1.5 sm:w-2 bg-neutral-200'
+              idx === currentIndex ? 'w-6 sm:w-8 bg-green-500' : 'w-1.5 sm:w-2 bg-neutral-200'
             }`}
           />
         ))}

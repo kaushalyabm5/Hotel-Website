@@ -205,15 +205,15 @@ const Hero = () => {
           ref={buttonGroupRef} 
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto opacity-0 px-4 sm:px-0"
         >
-          <button className="group relative w-full sm:w-auto px-8 py-3.5 overflow-hidden text-[10px] uppercase tracking-[0.25em] font-semibold transition-all duration-500 bg-white text-neutral-950 rounded-full border border-white hover:text-white">
-            <span className="absolute inset-0 bg-neutral-900 transition-transform duration-500 translate-y-full group-hover:translate-y-0" />
+          <button className="group cursor-pointer relative w-full sm:w-auto px-8 py-3.5 overflow-hidden text-[10px] uppercase tracking-[0.25em] font-semibold transition-all duration-500 bg-green-500 text-neutral-950 rounded-full hover:text-white">
+            
             <span className="relative flex items-center justify-center gap-2">
               Explore Reserve
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
             </span>
           </button>
           
-          <button className="group relative w-full sm:w-auto px-8 py-3.5 overflow-hidden text-[10px] uppercase tracking-[0.25em] font-semibold transition-all duration-500 border border-white/20 text-white rounded-full hover:border-white/60">
+          <button className="group cursor-pointer relative w-full sm:w-auto px-8 py-3.5 overflow-hidden text-[10px] uppercase tracking-[0.25em] font-semibold transition-all duration-500 border border-white/20 text-white rounded-full hover:border-white/60">
             <span className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span>Book Stay</span>
           </button>

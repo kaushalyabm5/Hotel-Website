@@ -52,7 +52,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       type="button"
       aria-label="Scroll to top of page"
-      className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--primary-color)] text-white shadow-2xl transition-all duration-500 hover:-translate-y-1.5 focus:outline-none ring-1 ring-white/10 backdrop-blur-md group ${
+      className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition-all duration-500 hover:-translate-y-1.5 focus:outline-none ring-1 ring-white/10 backdrop-blur-md group ${
         isVisible ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
       }`}
     >
