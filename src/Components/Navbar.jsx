@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { Calendar } from 'lucide-react';
+// Import the logo image
+import logoImg from '../assets/nav-logo/logo3.png';
 
 gsap.registerPlugin(CustomEase);
 
@@ -107,15 +109,16 @@ const Navbar = () => {
               : 'h-24 bg-transparent border-b border-white/5'
             }`}
         >
-          {/* Elegant Modern Logo */}
+          {/* Brand Logo & Name */}
           <a href="#home" onClick={() => handleNavLinkClick('home')} className="flex items-center gap-3 group select-none">
-            <div className="relative w-6 h-6 flex items-center justify-center">
-              <span className="absolute inset-0 border border-[var(--primary-color,rgba(255,255,255,0.8))] rounded-full transition-transform duration-700 group-hover:scale-110" />
-              <span className="w-1.5 h-1.5 bg-[var(--primary-color,rgba(255,255,255,0.9))] rounded-full transition-transform duration-500 group-hover:scale-75" />
+            <div className="relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+              <img 
+                src={logoImg} 
+                alt="Nilwadula Logo" 
+                className={`object-contain transition-all duration-500 ${scrolled ? 'h-10 w-10' : 'h-25 w-25'}`}
+              />
             </div>
-            <span className="text-sm md:text-base font-light tracking-[0.3em] uppercase text-white font-serif transition-colors duration-300 group-hover:text-neutral-300" style={{ fontFamily: "'Cinzel', 'Didot', serif" }}>
-              Nilwadula
-            </span>
+           
           </a>
 
           {/* Desktop Links Container */}
@@ -160,7 +163,13 @@ const Navbar = () => {
       {/* Full Screen Menu Overlay */}
       <div ref={menuOverlayRef} className={`fixed inset-0 z-50 bg-neutral-950 flex flex-col justify-between lg:hidden transition-all duration-100 ${isOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none'}`} style={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}>
         <div className="w-full h-24 px-6 flex items-center justify-between border-b border-white/5">
-          <div className="text-white tracking-[0.2em] uppercase text-base font-light">Nilwadula</div>
+          {/* Mobile Overlay Logo */}
+          <div className="flex items-center gap-3 select-none">
+            <img src={logoImg} alt="Nilwadula Logo" className="h-8 w-8 object-contain" />
+            <div className="text-white tracking-[0.2em] uppercase text-base font-light" style={{ fontFamily: "'Cinzel', 'Didot', serif" }}>
+              Nilwadula
+            </div>
+          </div>
           <button onClick={() => setIsOpen(false)} className="w-8 h-8 flex items-center justify-center relative focus:outline-none z-50 group">
             <span className="w-5 h-[1.5px] bg-white transform rotate-45 absolute transition-transform duration-300 group-hover:rotate-[135deg]" />
             <span className="w-5 h-[1.5px] bg-white transform -rotate-45 absolute transition-transform duration-300 group-hover:rotate-[-135deg]" />
