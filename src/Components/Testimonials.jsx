@@ -115,17 +115,16 @@ export default function Testimonials() {
   const duration = 28;
 
   return (
-    <section className="bg-white py-24 overflow-hidden w-full">
+    <section className="bg-white pt-30 pb-35 overflow-hidden w-full">
       {/* Top Header Section */}
-      <div className="max-w-3xl mx-auto text-center px-6 mb-16">
-        <span className="text-xs font-semibold tracking-[0.2em] text-amber-600 uppercase block mb-3">
-          Reviews
-        </span>
-        <h2 className="text-3xl md:text-4xl font-serif font-medium text-gray-900 mb-4 tracking-wide">
+      {/* Top Center Section Title */}
+      <div className="w-full text-center mb-20">
+        <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
           Guest Testimonials
-        </h2>
-        <p className="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-          Discover why travelers from around the globe choose our sanctuary for their unforgettable getaways and luxurious escapes.
+        </h3>
+        <p className="text-neutral-500 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+                    Discover why travelers from around the globe choose our sanctuary for their unforgettable getaways and luxurious escapes.
+
         </p>
       </div>
 

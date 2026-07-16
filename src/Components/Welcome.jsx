@@ -75,7 +75,7 @@ const Welcome = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-12">
         
         {/* Left Layout Pane: Narrative Blocks */}
-        <div ref={leftColRef} className="w-full lg:w-[40%] flex flex-col items-start">
+        <div ref={leftColRef} className="w-full lg:w-[45%] flex flex-col items-start">
           
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-900/5 rounded-full mb-6 reveal-item opacity-0">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-800 animate-pulse" />
@@ -85,19 +85,18 @@ const Welcome = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-neutral-950 uppercase leading-[1.15] mb-6 font-serif reveal-item opacity-0">
-            A quiet <br />
-            <span className="font-sans font-black tracking-normal text-neutral-900">REVOLUTION</span> <br />
-            in luxury.
+            Welcome to <br />
+            <span className="font-sans font-black tracking-normal text-neutral-900">NILWADULA</span> <br />
+            <span className="text-lg sm:text-xl font-sans tracking-[0.2em] text-neutral-500 block mt-2">Udawalawe</span>
           </h2>
 
-          <p className="text-neutral-500 text-sm font-light tracking-wide leading-relaxed max-w-md mb-8 reveal-item opacity-0">
-            Nilwadula balances pure architectural lines with the fluid, organic contours of the island terrain. Built entirely out of locally sourced timber and smooth cast stone, these spaces are designed to soften your day-to-day rhythms.
-          </p>
-          
-          <div className="reveal-item opacity-0 w-full sm:w-auto">
-            <button className="w-full sm:w-auto cursor-pointer px-7 py-3.5 text-[10px] uppercase tracking-[0.3em] font-bold bg-neutral-950 text-white rounded-xl transition-all duration-300 hover:bg-neutral-800 shadow-xl shadow-neutral-950/10 hover:shadow-neutral-950/20">
-              View Spaces
-            </button>
+          <div className="text-neutral-500 text-sm font-light tracking-wide leading-relaxed max-w-md reveal-item opacity-0 flex flex-col gap-4">
+            <p>
+              Nestled beside a peaceful river in the heart of Udawalawe, Nilwadula Hotel is where nature and comfort come together. Whether you're here for a wildlife safari, a relaxing holiday, or simply to reconnect with nature, we invite you to enjoy genuine Sri Lankan hospitality in a tranquil riverside setting.
+            </p>
+            <p>
+              From breathtaking mornings by the water to relaxing evenings under the stars, every moment at Nilwadula is designed to create lasting memories.
+            </p>
           </div>
         </div>
 

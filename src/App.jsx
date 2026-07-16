@@ -13,6 +13,8 @@ import Contact from './Components/Contact'
 import Footer from './Components/Footer'
 import ScrollToTop from './Components/ScrollToTop'
 import Services from './Components/Services'
+import About from './Components/About'
+import WhyStayWithUs from './Components/WhyStayWithUs'
 
 const App = () => {
 
@@ -30,8 +32,8 @@ const App = () => {
       <Navbar />
       <Hero />
       <Welcome />
-      <AboutUs2 />
-      <WhyUs />
+      <About />
+      <WhyStayWithUs />
       <Services />
       <Accommodation />
       <Gallery />
