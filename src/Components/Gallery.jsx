@@ -8,6 +8,14 @@ import img2 from '../assets/galleryImg/2.png';
 import img3 from '../assets/galleryImg/3.png';
 import img4 from '../assets/galleryImg/4.png';
 import img5 from '../assets/galleryImg/5.png';
+import img6 from '../assets/galleryImg/6.png';
+import img7 from '../assets/galleryImg/7.png';
+import img8 from '../assets/galleryImg/8.png';
+import img9 from '../assets/galleryImg/9.png';
+import img10 from '../assets/galleryImg/10.png';
+import img11 from '../assets/galleryImg/11.png';
+import img12 from '../assets/galleryImg/12.png';
+import img13 from '../assets/galleryImg/13.png';
 
 // Swapped out external links for your local asset imports
 const IMAGES = [
@@ -15,7 +23,15 @@ const IMAGES = [
   { id: 2, url: img2, title: 'Misty Ridge' },
   { id: 3, url: img3, title: 'Forest Sanctuary' },
   { id: 4, url: img4, title: 'Golden Valley' },
-  { id: 5, url: img5, title: 'Ethereal Dunes' }
+  { id: 5, url: img5, title: 'Ethereal Dunes' },
+  { id: 6, url: img6, title: 'Ethereal Dunes' },
+  { id: 7, url: img7, title: 'Ethereal Dunes' },
+  { id: 8, url: img8, title: 'Ethereal Dunes' },
+  { id: 9, url: img9, title: 'Ethereal Dunes' },
+  { id: 10, url: img10, title: 'Ethereal Dunes' },
+  { id: 11, url: img11, title: 'Ethereal Dunes' },
+  { id: 12, url: img12, title: 'Ethereal Dunes' },
+  { id: 13, url: img13, title: 'Ethereal Dunes' },
 ];
 
 export default function Gallery() {

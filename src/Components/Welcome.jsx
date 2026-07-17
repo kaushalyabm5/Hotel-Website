@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CustomEase } from 'gsap/CustomEase';
-import firstImage from '../assets/about-img1.jpg'; 
-import secondImage from '../assets/about-img2.jpg';
+import firstImage from '../assets/about-Img/1.png'; 
+import secondImage from '../assets/about-Img/2.png';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 

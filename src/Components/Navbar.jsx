@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import { Calendar } from 'lucide-react';
 // Import the logo image
-import logoImg from '../assets/nav-logo/logo3.png';
+import logoImg from '../assets/nav-logo/logo35.png';
 
 gsap.registerPlugin(CustomEase);
 
@@ -19,7 +19,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home', id: 'home' },
     { name: 'About Us', href: '#about', id: 'about' },
-    { name: 'Why Chose Us', href: '#why-choose-us', id: 'why-choose-us' },
+    { name: 'Why Choose Us', href: '#why-choose-us', id: 'why-choose-us' },
     { name: 'Services', href: '#services', id: 'services' },
     { name: 'Gallery', href: '#gallery', id: 'gallery' },
     
@@ -146,7 +146,7 @@ const Navbar = () => {
                 
                 <span className="relative flex items-center gap-2">
                   <Calendar className="w-3 h-3 transition-transform duration-300" strokeWidth={2.5} />
-                  Accommodation
+                  Book Now
                 </span>
               </button>
             </a>
@@ -184,7 +184,7 @@ const Navbar = () => {
                 href={link.href} 
                 onClick={() => handleNavLinkClick(link.id)} 
                 className={`mobile-anim-link text-lg uppercase font-light tracking-[0.3em] transition-colors duration-300 block opacity-0 cursor-pointer py-1
-                  ${isCurrent ? 'text-white font-medium' : 'text-neutral-500 hover:text-white'}`}
+                  ${isCurrent ? 'text-green-500 font-medium' : 'text-neutral-500 hover:text-white'}`}
               >
                 {link.name}
               </a>
@@ -192,9 +192,12 @@ const Navbar = () => {
           })}
         </nav>
         <div className="w-full p-6 text-center border-t border-white/5 mb-4 mobile-anim-link opacity-0">
-          <button onClick={() => handleNavLinkClick('accommodation')} className="w-full max-w-sm bg-white text-neutral-950 font-semibold text-xs uppercase tracking-[0.2em] py-4 rounded-full shadow-2xl">
-            Book Accommodation
+        <a href='#accommodation'>
+            <button onClick={() => handleNavLinkClick('accommodation')} className="w-full max-w-sm bg-green-500 text-neutral-950 font-semibold text-xs uppercase tracking-[0.2em] py-4 rounded-full shadow-2xl">
+            Book Now
           </button>
+        </a>
+          
         </div>
       </div>
     </>

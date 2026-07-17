@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CustomEase } from 'gsap/CustomEase';
-import backgroundImage from '../assets/hero-img/2.png';
+import backgroundImage from '../assets/galleryImg/11.png';
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
@@ -50,7 +50,7 @@ const About = () => {
     <section 
       ref={sectionRef}
       id="about"
-      className="relative w-full min-h-[90vh] flex items-center select-none overflow-hidden bg-neutral-950"
+      className="relative w-full min-h-screen flex items-center select-none overflow-hidden bg-neutral-950"
     >
       {/* Background Image Container with Ken Burns entrance effect */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">

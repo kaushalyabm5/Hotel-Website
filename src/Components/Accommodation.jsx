@@ -6,9 +6,9 @@ import {
 } from 'lucide-react';
 
 // Import images from src/assets/hero-img
-import img1 from '../assets/hero-img/1.png';
-import img2 from '../assets/hero-img/2.png';
-import img3 from '../assets/hero-img/3.png';
+import img1 from '../assets/rooms-img/1.png';
+import img2 from '../assets/rooms-img/2.png';
+import img3 from '../assets/rooms-img/3.png';
 
 const Accommodation = () => {
   const rooms = [
@@ -52,21 +52,21 @@ const Accommodation = () => {
   ];
 
   return (
-    <section id='accommodation' className="bg-white text-stone-900 py-24 px-6 md:px-12 lg:px-24">
+    <section id='accommodation' className="bg-white text-stone-900 py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-24">
       <div className="max-w-7xl mx-auto">
         
         {/* Top Center Section Title */}
-        <div className="w-full text-center mb-20">
-          <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
+        <div className="w-full text-center mb-12 md:mb-20">
+          <h3 className="text-3xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
             Our Accommodation
           </h3>
-          <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
+          <p className="text-neutral-500 text-sm sm:text-base font-normal max-w-xl mx-auto leading-relaxed">
             Designed for rest and relaxation, our rooms provide a peaceful retreat after a day exploring Udawalawe. Wake up to fresh air, scenic garden views, and the gentle sounds of the nearby river.
           </p>
         </div>
 
-        {/* Room Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {/* Room Grid Section - Clean tablet behavior using md:grid-cols-2 -> lg:grid-cols-3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24">
           {rooms.map((room) => (
             <div 
               key={room.id} 
@@ -75,25 +75,25 @@ const Accommodation = () => {
                 boxShadow: "0 20px 40px -15px rgba(28, 25, 23, 0.4), 0 0 0 1px rgba(28, 25, 23, 0.02)"
               }}
             >
-              {/* Image Container with rounded top corners embedded in the parent overflow */}
+              {/* Image Container */}
               <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
                 <img 
                   src={room.image} 
                   alt={room.type} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur-sm text-white text-xs uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full shadow-sm">
+                <div className="absolute top-4 left-4 bg-green-500/90 backdrop-blur-sm text-white text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full shadow-sm">
                   {room.view}
                 </div>
               </div>
 
               {/* Card Details */}
-              <div className="p-8 flex-grow flex flex-col justify-between">
+              <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-medium uppercase tracking-tight text-stone-900 mb-1">
+                  <h3 className="text-xl sm:text-2xl font-medium uppercase tracking-tight text-stone-900 mb-1">
                     {room.type}
                   </h3>
-                  <p className="text-xs tracking-wide text-green-500 font-semibold mb-4">
+                  <p className="text-xs tracking-wide text-green-600 font-semibold mb-4">
                     {room.bedding}
                   </p>
                   <p className="text-stone-600 text-sm leading-relaxed mb-6">
@@ -101,13 +101,11 @@ const Accommodation = () => {
                   </p>
                 </div>
                 
-                <div className="pt-4 border-t border-stone-100 flex justify-between items-center">
-                  <span className="text-sm font-semibold text-stone-900 cursor-pointer">
-                    Book This Room
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center transition-transform group-hover:translate-x-1 duration-300">
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+                <div className="pt-4 border-t border-stone-100">
+                  <button className="w-full cursor-pointer group flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-600">
+                    <span>Book This Room</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -115,15 +113,15 @@ const Accommodation = () => {
         </div>
 
         {/* Re-designed Bottom Features Section */}
-        <div className="bg-[white] shadow-2xl rounded-3xl p-8 md:p-12 border border-stone-100">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="bg-white shadow-2xl rounded-3xl p-6 sm:p-8 md:p-12 border border-stone-100/80">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             <div className="lg:col-span-4">
               <div className="inline-flex items-center space-x-2 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4">
                 <span>Included with stay</span>
               </div>
-              <h3 className="text-3xl font-light tracking-tight text-neutral-900">
-                Premium <br />
+              <h3 className="text-2xl sm:text-3xl font-light tracking-tight text-neutral-900">
+                Premium <br className="hidden lg:block" />
                 <span className="font-semibold text-green-500">In-Room Amenities</span>
               </h3>
               <p className="text-stone-600 text-sm mt-4 leading-relaxed">

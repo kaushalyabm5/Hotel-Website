@@ -120,7 +120,7 @@ export default function Testimonials() {
       {/* Top Center Section Title */}
       <div className="w-full text-center mb-20">
         <h3 className="text-2xl md:text-[3rem] font-light tracking-wide text-neutral-900 uppercase mb-4 font-serif">
-          Guest Testimonials
+          Guest Reviews
         </h3>
         <p className="text-neutral-500 text-xs md:text-sm font-normal max-w-xl mx-auto leading-relaxed">
                     Discover why travelers from around the globe choose our sanctuary for their unforgettable getaways and luxurious escapes.

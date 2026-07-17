@@ -3,7 +3,7 @@ import React from 'react';
 import { CalendarDays } from 'lucide-react';
 
 // Import the requested image from src/assets/hero-img
-import bgImg from '../assets/hero-img/2.png';
+import bgImg from '../assets/galleryImg/7.png';
 
 const CTA = () => {
   // Precise premium deep ambient shadow values matching your project style
@@ -49,10 +49,14 @@ const CTA = () => {
 
             {/* Interactive Premium Booking Action */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-              <button className="w-full sm:w-auto px-8 py-4 bg-green-500 text-stone-900 font-semibold text-sm tracking-wide rounded-xl shadow-md transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-2">
+              <a href='#accommodation'>
+                 <button className="w-full sm:w-auto px-8 py-4 bg-green-500 text-white font-semibold text-sm tracking-wide rounded-xl shadow-md transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-2">
                 <CalendarDays className="w-4 h-4 text-white" />
                 <span>Book Your Stay Today</span>
               </button>
+
+              </a>
+             
             </div>
 
           </div>
