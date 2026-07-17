@@ -115,7 +115,7 @@ export default function Testimonials() {
   const duration = 28;
 
   return (
-    <section className="bg-white pt-30 pb-35 overflow-hidden w-full">
+    <section id='reviews' className="bg-white pt-30 pb-35 overflow-hidden w-full">
       {/* Top Header Section */}
       {/* Top Center Section Title */}
       <div className="w-full text-center mb-20">

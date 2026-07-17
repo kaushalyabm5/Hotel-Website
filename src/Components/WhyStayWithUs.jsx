@@ -146,7 +146,7 @@ const WhyStayWithUs = () => {
                   </div>
                   
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-green-50 rounded-xl text-green-600 border border-green-100">
+                    <div className="p-2 bg-green-500 rounded-xl text-green-100 border border-green-100">
                       {feat.icon}
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-light text-neutral-950">
@@ -189,7 +189,7 @@ const WhyStayWithUs = () => {
             <div className="col-span-1 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 lg:gap-x-8">
               {quickAmenities.map((amenity, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-neutral-600">
-                  <div className="text-green-600 flex-shrink-0">
+                  <div className="text-green-500 flex-shrink-0">
                     {amenity.icon}
                   </div>
                   <span className="text-sm font-normal tracking-wide">

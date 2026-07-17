@@ -24,6 +24,17 @@ export default function Footer() {
     }, 1000);
   };
 
+  // Structured array mapping the display names to their actual section IDs
+  const navigationLinks = [
+    { label: 'Home', id: 'home' },
+    { label: 'About', id: 'about' },
+    { label: 'Why Choose Us', id: 'why-choose-us' },
+    { label: 'Accommodation', id: 'accommodation' }, // Matches your accommodation ID
+    { label: 'Services', id: 'services' },
+    { label: 'Guest Reviews', id: 'reviews' },
+    { label: 'Gallery', id: 'gallery' }
+  ];
+
   return (
     <footer className="bg-stone-950 text-stone-400 pt-20 pb-8 px-6 md:px-12 lg:px-24 border-t border-stone-900 antialiased selection:bg-white selection:text-stone-950">
       <div className="max-w-7xl mx-auto">
@@ -56,26 +67,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (Condensed to allow wider map) */}
+          {/* Column 2: Quick Links */}
           <div className="lg:col-span-2 lg:pl-4 space-y-4">
             <h4 className="text-[10px] uppercase tracking-[0.25em] text-stone-500 font-bold">
               Navigation
             </h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Why Choose Us', 'Services', 'Gallery'].map((link) => (
-                <li key={link}>
+              {navigationLinks.map((link) => (
+                <li key={link.id}>
                   <a 
-                    href={`#${link}`} 
-                    className="text-xs font-light capitalize hover:text-white transition-colors duration-300 block py-0.5"
+                    href={`#${link.id}`} 
+                    className="text-xs font-light hover:text-white transition-colors duration-300 block py-0.5"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Expanded Mini Map (Increased to 4 Columns for better visual presence) */}
+          {/* Column 3: Expanded Mini Map */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-[10px] uppercase tracking-[0.25em] text-stone-500 font-bold">
               The Sanctuary Map
@@ -92,7 +103,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 4: Quick Inquiry Form (3 Columns wide) */}
+          {/* Column 4: Quick Inquiry Form */}
           <div className="lg:col-span-3 space-y-4">
             <h4 className="text-[10px] uppercase tracking-[0.25em] text-stone-500 font-bold">
               Quick Inquiry
@@ -147,8 +158,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[11px] font-light text-stone-500">
             <a href="#privacy" className="hover:text-stone-300 transition-colors">Privacy Rules</a>
             <a href="#terms" className="hover:text-stone-300 transition-colors">Terms & Constraints</a>
-            <a href="#child-policy" className="hover:text-stone-300 transition-colors">Child Policy</a>
-            <a href="#cancellation" className="hover:text-stone-300 transition-colors">Cancellation Rules</a>
+            
           </div>
         </div>
 

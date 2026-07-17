@@ -18,7 +18,8 @@ const Accommodation = () => {
       type: "Deluxe Double Room",
       view: "River View",
       bedding: "1 King size double bed",
-      description: "Perfect for couples seeking a serene escape with soothing views of the flowing river."
+      description: "Perfect for couples seeking a serene escape with soothing views of the flowing river.",
+      bookingUrl: "https://your-booking-system.com/book/deluxe-double" // Add your link here
     },
     {
       id: 2,
@@ -26,7 +27,8 @@ const Accommodation = () => {
       type: "Deluxe Triple Room",
       view: "Pool View",
       bedding: "1 Single bed & 1 Double bed",
-      description: "Spacious and comfortable, offering direct visual connection to our sparkling pool."
+      description: "Spacious and comfortable, offering direct visual connection to our sparkling pool.",
+      bookingUrl: "https://your-booking-system.com/book/deluxe-triple" // Add your link here
     },
     {
       id: 3,
@@ -34,7 +36,8 @@ const Accommodation = () => {
       type: "Deluxe Family Room",
       view: "Pool View",
       bedding: "2 Double beds",
-      description: "Designed for families to bond and unwind together in absolute comfort."
+      description: "Designed for families to bond and unwind together in absolute comfort.",
+      bookingUrl: "https://your-booking-system.com/book/deluxe-family" // Add your link here
     }
   ];
 
@@ -65,7 +68,7 @@ const Accommodation = () => {
           </p>
         </div>
 
-        {/* Room Grid Section - Clean tablet behavior using md:grid-cols-2 -> lg:grid-cols-3 */}
+        {/* Room Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16 md:mb-24">
           {rooms.map((room) => (
             <div 
@@ -101,18 +104,24 @@ const Accommodation = () => {
                   </p>
                 </div>
                 
+                {/* Changed from <button> to an <a> tag pointing to room.bookingUrl */}
                 <div className="pt-4 border-t border-stone-100">
-                  <button className="w-full cursor-pointer group flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-600">
+                  <a 
+                    href={room.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-600 transition-colors"
+                  >
                     <span>Book This Room</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Re-designed Bottom Features Section */}
+        {/* Bottom Features Section */}
         <div className="bg-white shadow-2xl rounded-3xl p-6 sm:p-8 md:p-12 border border-stone-100/80">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
@@ -129,7 +138,6 @@ const Accommodation = () => {
               </p>
             </div>
             
-            {/* Attractive Grid of Cards with Lucide Icons */}
             <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {features.map((feature, idx) => {
                 const IconComponent = feature.icon;
