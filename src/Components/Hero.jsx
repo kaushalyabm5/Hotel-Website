@@ -3,12 +3,11 @@ import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 
 // Import luxury images from src/assets/hero-img
-import bg1 from '../assets/hero-img/4.png';
-import bg2 from '../assets/hero-img/1.png';
+import bg1 from '../assets/hero-img/1.png';
+import bg2 from '../assets/hero-img/2.png';
 import bg3 from '../assets/hero-img/3.png';
-import bg4 from '../assets/hero-img/7.png';
-import bg5 from '../assets/hero-img/2.png';
-import bg7 from '../assets/hero-img/5.png';
+import bg4 from '../assets/hero-img/4.png';
+import bg5 from '../assets/hero-img/5.png';
 
 
 gsap.registerPlugin(CustomEase);
@@ -21,7 +20,7 @@ const Hero = () => {
   const scrollIndicatorRef = useRef(null);
 
   // Array of background images
-  const backgroundImages = [bg1, bg2, bg3, bg4, bg5, bg7];
+  const backgroundImages = [bg1, bg2, bg3, bg4, bg5,];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Store references to each background slide dynamically
