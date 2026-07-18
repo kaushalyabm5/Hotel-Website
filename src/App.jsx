@@ -13,6 +13,7 @@ import About from './Components/About'
 import WhyStayWithUs from './Components/WhyStayWithUs'
 import Facilities from './Components/Facilities'
 import CTA from './Components/CTA'
+import Gallery2 from './Components/Gallery2'
 
 const App = () => {
 
@@ -35,6 +36,7 @@ const App = () => {
       <Accommodation />
       <Facilities />
       <Gallery />
+      <Gallery2 />
       <Testimonials />
       <CTA />
       <Footer />
