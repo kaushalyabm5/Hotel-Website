@@ -70,7 +70,7 @@ export default function Gallery2() {
           </h2>
         </div>
         <p className="text-neutral-600 max-w-xs text-sm md:text-base font-normal leading-relaxed">
-          Captured moments from our desert trips and scenic routes.
+         Curated snapshots of our hotel interiors and scenic surroundings.
         </p>
       </div>
 

@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 // Import main images (PNG) from src/assets/rooms-img
-import img1 from '../assets/rooms-img/1.png';
+
 import img2 from '../assets/rooms-img/2.png';
 import img3 from '../assets/rooms-img/3.png';
 
@@ -36,7 +36,7 @@ const Accommodation = () => {
   const rooms = [
     {
       id: 0,
-      images: [img1, d1, d2, d3],
+      images: [ d1, d2, d3],
       type: "Deluxe Double Room",
       view: "River View",
       bedding: "1 King size double bed",
