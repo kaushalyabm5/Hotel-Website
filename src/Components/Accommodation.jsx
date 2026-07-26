@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 
 // Import main images (PNG) from src/assets/rooms-img
-
 import img2 from '../assets/rooms-img/2.png';
 import img3 from '../assets/rooms-img/3.png';
 
@@ -33,15 +32,28 @@ import f5 from '../assets/rooms-img/f-5.webp';
 import f6 from '../assets/rooms-img/f-6.webp';
 
 const Accommodation = () => {
+  // WhatsApp Configuration
+  const WHATSAPP_PHONE = '94762002755'; // Formatted without '+' or spaces for wa.me link
+
+  // Function to generate pre-filled WhatsApp URL
+  const getWhatsAppLink = (room) => {
+    const message = `Hello! I would like to book a room.\n\n` +
+      `*Room Type:* ${room.type}\n` +
+      `*View:* ${room.view}\n` +
+      `*Bedding:* ${room.bedding}\n\n` +
+      `Please let me know the availability and pricing. Thank you!`;
+
+    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+  };
+
   const rooms = [
     {
       id: 0,
-      images: [ d1, d2, d3],
+      images: [d1, d2, d3],
       type: "Deluxe Double Room",
       view: "River View",
       bedding: "1 King size double bed",
-      description: "Perfect for couples seeking a serene escape with soothing views of the flowing river.",
-      bookingUrl: "https://your-booking-system.com/book/deluxe-double"
+      description: "Perfect for couples seeking a serene escape with soothing views of the flowing river."
     },
     {
       id: 1,
@@ -49,8 +61,7 @@ const Accommodation = () => {
       type: "Deluxe Triple Room",
       view: "Pool View",
       bedding: "1 Single bed & 1 Double bed",
-      description: "Spacious and comfortable, offering direct visual connection to our sparkling pool.",
-      bookingUrl: "https://your-booking-system.com/book/deluxe-triple"
+      description: "Spacious and comfortable, offering direct visual connection to our sparkling pool."
     },
     {
       id: 2,
@@ -58,8 +69,7 @@ const Accommodation = () => {
       type: "Deluxe Family Room",
       view: "Pool View",
       bedding: "2 Double beds",
-      description: "Designed for families to bond and unwind together in absolute comfort.",
-      bookingUrl: "https://your-booking-system.com/book/deluxe-family"
+      description: "Designed for families to bond and unwind together in absolute comfort."
     }
   ];
 
@@ -174,13 +184,13 @@ const Accommodation = () => {
                     </p>
                   </div>
                   
-                  {/* Action Booking Link */}
+                  {/* Action Booking Link - Redirects to WhatsApp */}
                   <div className="pt-4 border-t border-stone-100">
                     <a 
-                      href={room.bookingUrl}
+                      href={getWhatsAppLink(room)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-green-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-600 rounded-full"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-green-600 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-500 rounded-full shadow-sm"
                     >
                       <span>Book This Room</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" />

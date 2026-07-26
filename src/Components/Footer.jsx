@@ -54,15 +54,15 @@ export default function Footer() {
             <div className="space-y-3 pt-2">
               <a href="tel:+94112345678" className="flex items-center gap-3 text-xs font-light hover:text-white transition-colors duration-300">
                 <Phone size={13} className="text-stone-500" />
-                <span>+94 11 234 5678</span>
+                <span>+94 76 200 2755</span>
               </a>
               <a href="mailto:info@nilwadula.com" className="flex items-center gap-3 text-xs font-light hover:text-white transition-colors duration-300">
                 <Mail size={13} className="text-stone-500" />
-                <span>info@nilwadula.com</span>
+                <span>nilwadulahotel@gmail.com</span>
               </a>
               <div className="flex items-start gap-3 text-xs font-light">
                 <MapPin size={13} className="text-stone-500 mt-0.5 flex-shrink-0" />
-                <span>Walawe Riverfront, Udawalawe, Sri Lanka</span>
+                <span>Prajashalawa Road, 97 1/2 Junction, Udawalawe, Sri Lanka, 70190</span>
               </div>
             </div>
           </div>

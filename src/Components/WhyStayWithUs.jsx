@@ -74,7 +74,7 @@ const WhyStayWithUs = () => {
     {
       number: "02",
       tag: "THE ADVENTURE",
-      title: "Effortless National Park Access",
+      title: "Effortless Udawalawa National Park Access",
       desc: "We are situated just 30 minutes away from the gates of Udawalawe National Park. Enjoy curated private safari tours guided by experienced local trackers who know the exact paths of the wild herds.",
       icon: <Compass className="w-5 h-5 text-neutral-800" />,
       image: img2
