@@ -15,6 +15,7 @@ import Facilities from './Components/Facilities'
 import CTA from './Components/CTA'
 import Gallery2 from './Components/Gallery2'
 import LoadingScreen from './Components/LoadingScreen'
+import Places from './Components/Places'
 
 const App = () => {
   const [loading, setLoading] = useState(true)
@@ -48,7 +49,9 @@ const App = () => {
       <Facilities />
       <Gallery />
       <Gallery2 />
+       <Places />
       <Testimonials />
+     
       <CTA />
       <Footer />
 

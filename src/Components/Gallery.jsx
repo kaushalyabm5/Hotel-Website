@@ -15,7 +15,7 @@ import img9 from '../assets/galleryImg/9.png';
 import img10 from '../assets/galleryImg/10.png';
 import img11 from '../assets/galleryImg/11.png';
 import img12 from '../assets/galleryImg/12.png';
-import img13 from '../assets/galleryImg/13.png';
+
 
 // Swapped out external links for your local asset imports
 const IMAGES = [
@@ -31,7 +31,7 @@ const IMAGES = [
   { id: 10, url: img10, title: 'Ethereal Dunes' },
   { id: 11, url: img11, title: 'Ethereal Dunes' },
   { id: 12, url: img12, title: 'Ethereal Dunes' },
-  { id: 13, url: img13, title: 'Ethereal Dunes' },
+
 ];
 
 export default function Gallery() {
