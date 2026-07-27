@@ -8,7 +8,7 @@ import {
 // Import images from src/assets/hero-img
 import img1 from '../assets/hero-img/1.png';
 import img2 from '../assets/hero-img/2.png';
-import img3 from '../assets/galleryImg/13.png';
+import img3 from '../assets/food-img/1.png';
 import img4 from '../assets/galleryImg/3.png';
 
 const Facilities = () => {

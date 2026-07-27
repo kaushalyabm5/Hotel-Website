@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from './Components/Hero'
 import Navbar from './Components/Navbar'
 import { destroyLenis, initLenis } from './Components/initLenis'
@@ -14,17 +14,28 @@ import WhyStayWithUs from './Components/WhyStayWithUs'
 import Facilities from './Components/Facilities'
 import CTA from './Components/CTA'
 import Gallery2 from './Components/Gallery2'
+import LoadingScreen from './Components/LoadingScreen'
 
 const App = () => {
+  const [loading, setLoading] = useState(true)
 
-   useEffect(() => {
-    const instance = initLenis();
+  useEffect(() => {
+    const instance = initLenis()
+
+    // Hide the loading screen after 2.5 seconds
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 2500)
 
     return () => {
-      destroyLenis(instance);
-    };
-  }, []);
+      destroyLenis(instance)
+      clearTimeout(timer)
+    }
+  }, [])
 
+  if (loading) {
+    return <LoadingScreen />
+  }
 
   return (
     <div>

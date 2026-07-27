@@ -11,7 +11,7 @@ import img2 from '../assets/rooms-img/2.png';
 import img3 from '../assets/rooms-img/3.png';
 
 // Import Double Room images (WEBP)
-import d1 from '../assets/rooms-img/d-1.webp';
+import d1 from '../assets/rooms-img/d-1.png';
 import d2 from '../assets/rooms-img/d-2.webp';
 import d3 from '../assets/rooms-img/d-3.webp';
 
